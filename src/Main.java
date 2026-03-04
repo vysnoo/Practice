@@ -1,15 +1,11 @@
 public class Main {
     public static void main(String[] args) {
         // Patten Program Practice
-        int n = 5;
-        for (int row = 1; row <= n * 2 - 1; row++) {
-            int spaceCond = row <= n * 2 / 2 ? n - row : row - n;
-            for (int space = 1; space <= spaceCond; space++) {
-                System.out.print(" ");
-            }
-            int starCond = row <= n * 2 / 2 ? (row * 2) - 1 : (n * 2 - row) * 2 - 1;
-            for (int star = 1; star <= starCond; star++) {
-                System.out.print("*");
+        int n = 6;
+        for (int row = 1; row <= n; row++) {
+            for (int col = 1; col <= n; col++) {
+                int min = Math.min(row,Math.min(col,Math.min(n-col+1,n-row+1)));
+                System.out.print(min);
             }
             System.out.println();
         }
